@@ -18,13 +18,15 @@ class Heap {
 
     private void ensureExtraCapacity() {
         if (size == capacity) {
+            System.out.print("Old capacity = " + capacity);
             capacity *= 2;
+            System.out.println(", New capacity = " + capacity);
             data = Arrays.copyOf(data, capacity);
         }
     }
 
     private void heapUp() {
-        int index = data[size - 1];
+        int index = size - 1;
         while (hasParent(index) && parent(index) > data[index]) {
             swap(index, getParentIndex(index));
             index = getParentIndex(index);
@@ -108,5 +110,10 @@ class Heap {
 public class HeapDriver {
     public static void main(String[] args) {
         //code
+        Heap h = new Heap();
+        for (int i = 0; i < 80; i++) {
+            h.offer(i + 10);
+        }
+        System.out.println(h.peek());
     }
 }
