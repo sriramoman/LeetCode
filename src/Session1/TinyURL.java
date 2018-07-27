@@ -1,3 +1,5 @@
+package Session1;
+
 class Codec {
 
     // Encodes data URL to data shortened URL.

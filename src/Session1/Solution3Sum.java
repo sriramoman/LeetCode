@@ -1,6 +1,7 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package Session1;
+
+import java.util.ArrayList;
+import java.util.List;
 
 class Sum3 {
     public boolean tripletExists(List<Integer> triplet, List<List<Integer>> tripletSet) {
