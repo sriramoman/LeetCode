@@ -7,12 +7,12 @@ class Heap {
     private int size;
     private int capacity = 10;
 
-    public Heap() {
+    Heap() {
         size = 0;
         data = new int[capacity];
     }
 
-    public void offer(int value) {
+    void offer(int value) {
         ensureExtraCapacity();
         data[size++] = value;
         heapUp();
@@ -70,7 +70,7 @@ class Heap {
         return getParentIndex(childIndex) >= 0;
     }
 
-    public int peek() {
+    int peek() {
         if (size == 0)
             throw new IndexOutOfBoundsException();
         return data[0];
