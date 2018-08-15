@@ -20,9 +20,7 @@ class Heap {
 
     private void ensureExtraCapacity() {
         if (size == capacity) {
-            System.out.print("Old capacity = " + capacity);
             capacity *= 2;
-            System.out.println(", New capacity = " + capacity);
             data = Arrays.copyOf(data, capacity);
         }
     }
