@@ -13,7 +13,6 @@ class LRUCache {
 
     public int get(int key) {
         if (map.containsKey(key)) {
-            System.out.println("Contains key " + key);
             Node n = map.get(key);
             list.delete(n);
             list.enq(n);
