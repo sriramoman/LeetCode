@@ -3,40 +3,6 @@ package Session1;
 import java.util.HashMap;
 
 class LRUCache {
-    HashMap<Integer, Node> map;
-    DLList list;
-
-    public LRUCache(int capacity) {
-        list = new DLList(capacity);
-        map = new HashMap<Integer, Node>();
-    }
-
-    public int get(int key) {
-        if (map.containsKey(key)) {
-            Node n = map.get(key);
-            list.delete(n);
-            list.enq(n);
-            return n.val;
-        }
-        return -1;
-    }
-
-    public void put(int key, int value) {
-        if (map.containsKey(key)) {
-            Node n = map.get(key);
-            n.val = value;
-            list.delete(n);
-            list.enq(n);
-        } else {
-            Node n = new Node(key, value);
-            map.put(key, n);
-            if (list.size >= list.capacity) {
-                map.remove(list.tail.prev.key);
-                list.delete(list.tail.prev);
-            }
-            list.enq(n);
-        }
-    }
 
     private class Node {
         Node prev, next;
@@ -78,6 +44,41 @@ class LRUCache {
             n.next.prev = n.prev;
             n.next = null;
             n.prev = null;
+        }
+    }
+
+    HashMap<Integer, Node> map;
+    DLList list;
+
+    public LRUCache(int capacity) {
+        list = new DLList(capacity);
+        map = new HashMap<Integer, Node>();
+    }
+
+    public int get(int key) {
+        if (map.containsKey(key)) {
+            Node n = map.get(key);
+            list.delete(n);
+            list.enq(n);
+            return n.val;
+        }
+        return -1;
+    }
+
+    public void put(int key, int value) {
+        if (map.containsKey(key)) {
+            Node n = map.get(key);
+            n.val = value;
+            list.delete(n);
+            list.enq(n);
+        } else {
+            Node n = new Node(key, value);
+            map.put(key, n);
+            if (list.size >= list.capacity) {
+                map.remove(list.tail.prev.key);
+                list.delete(list.tail.prev);
+            }
+            list.enq(n);
         }
     }
 }
