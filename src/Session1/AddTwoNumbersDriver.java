@@ -5,7 +5,7 @@ public class AddTwoNumbersDriver {
     public static void main(String[] args) {
         //code
     }
-    
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null)
             return new ListNode(0);
