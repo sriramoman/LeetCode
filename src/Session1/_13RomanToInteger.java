@@ -32,5 +32,6 @@ public class _13RomanToInteger {
     public static void main(String[] args) {
         //code
         System.out.println(romanToInt("LVIII"));
+        System.out.println(romanToInt("MCMXCIV"));
     }
 }
