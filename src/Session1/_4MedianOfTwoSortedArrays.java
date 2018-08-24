@@ -6,6 +6,7 @@ public class _4MedianOfTwoSortedArrays {
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        //Referred to leet code solution
         int m = nums1.length, n = nums2.length;
         if (m > n) {
             int[] tmp = nums1;
