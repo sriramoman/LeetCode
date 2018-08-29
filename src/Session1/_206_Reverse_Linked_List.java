@@ -3,7 +3,7 @@ package Session1;
 import java.util.Stack;
 
 public class _206_Reverse_Linked_List {
-    
+
     public static void main(String[] args) {
         //code
     }
